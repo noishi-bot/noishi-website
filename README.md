@@ -1,10 +1,10 @@
-# NoneBot 高仿官网 (NoneBot-Imitation-Website)
+# NoneBot 盗版官网 (NoneBot-Imitation-Website)
 
-**警告：** 本项目为个人娱乐性质的 React 高仿网站，旨在学习 React 技术和 NoneBot 框架，并非官方网站，请勿将其用于任何商业用途。
+**声明：** 本项目为个人娱乐性质的 React 高仿网站，旨在学习 React 技术和 NoneBot 框架，并非官方网站，请勿将其用于任何商业用途。
 
 ## 项目简介
 
-本项目旨在模仿 NoneBot 官方网站，使用 React 技术构建，提供一个相似的 UI 界面和内容结构。你可以通过本项目学习 React 开发，了解 NoneBot 的相关概念和知识。
+本项目旨在模仿 NoneBot 官方网站做一个盗版官网，使用 React 技术构建，提供一个相似的 UI 界面和内容结构。你可以通过本项目学习 React 开发，了解 NoneBot 的相关概念和知识。
 
 ## 主要功能
 
@@ -43,11 +43,7 @@
 
 ### 3. 克隆本项目
 
-   将项目克隆到你的本地计算机：
-   ```bash
-   git clone [你的仓库地址]
-   cd [项目文件夹名称]
-   ```
+   将项目克隆到你的本地计算机
 
 ### 4. 安装依赖
 

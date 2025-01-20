@@ -1,0 +1,36 @@
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 5px var(--neon-color), 0 0 10px var(--neon-color), 0 0 15px var(--neon-color), 0 0 20px var(--neon-color);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-color), 0 0 30px var(--neon-color), 0 0 40px var(--neon-color);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--neon-color), 0 0 10px var(--neon-color), 0 0 15px var(--neon-color), 0 0 20px var(--neon-color);
+  }
+}
+
+.neon-border-0 {
+  animation: neonPulse 3s infinite;
+}
+
+.neon-border-1 {
+  animation: neonPulse 2.5s infinite;
+}
+
+.neon-border-2 {
+  animation: neonPulse 2s infinite;
+}
+
+.neon-border-3 {
+  animation: neonPulse 1.5s infinite;
+}
+
+.neon-border-4 {
+  animation: neonPulse 1s infinite;
+}
+
+.neon-border-5 {
+  animation: neonPulse 0.5s infinite;
+}
+

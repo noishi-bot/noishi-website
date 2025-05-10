@@ -14,8 +14,8 @@ export default function DownloadPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="relative w-full aspect-[4/3] max-w-lg mx-auto">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nkoruFxKUazFqLxWhU7wPdS2SHM9BL.png"
-                  alt="NoneBot Logo"
+                  src="https://koishi.chat/logo.png"
+                  alt="Noishi Logo"
                   width={500}
                   height={375}
                   className="rounded-lg shadow-2xl bg-white p-8"
@@ -23,7 +23,7 @@ export default function DownloadPage() {
               </div>
               <div className="text-white">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                  NoneBot 官方正版激活
+                  Noishi 官方正版激活
                 </h1>
                 <p className="text-xl mb-6">安全·稳定·高效·可靠</p>
                 <div className="flex flex-wrap gap-4 mb-8">
@@ -48,10 +48,10 @@ export default function DownloadPage() {
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <span className="text-2xl font-bold text-purple-600">NB</span>
+                    <span className="text-2xl font-bold text-purple-600">NS</span>
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900">NoneBot</h2>
+                    <h2 className="text-2xl font-bold text-gray-900">Noishi</h2>
                     <p className="text-gray-500">官方正版授权</p>
                   </div>
                 </div>

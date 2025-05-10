@@ -97,7 +97,7 @@ const vipTiers = [
     name: "GUI会员",
     originalPrice: 360,
     discountedPrice: 180,
-    features: ["NoneBot GUI 完整访问权限", "图形化界面配置", "可视化插件管理", "GUI专属技术支持"],
+    features: ["Noishi GUI 完整访问权限", "图形化界面配置", "可视化插件管理", "GUI专属技术支持"],
     color: "from-teal-400 to-teal-600",
     neonColor: "rgba(20, 184, 166, 0.5)",
     coolnessLevel: 4,
@@ -106,13 +106,13 @@ const vipTiers = [
     name: "WebUI会员",
     originalPrice: 380,
     discountedPrice: 190,
-    features: ["NoneBot WebUI 完整访问权限", "在线可视化管理", "远程控制功能", "WebUI专属技术支持"],
+    features: ["Noishi WebUI 完整访问权限", "在线可视化管理", "远程控制功能", "WebUI专属技术支持"],
     color: "from-cyan-400 to-cyan-600",
     neonColor: "rgba(6, 182, 212, 0.5)",
     coolnessLevel: 4,
   },
   {
-    name: "OT会员",
+    name: "OneBot11会员",
     originalPrice: 299,
     discountedPrice: 149,
     features: ["一键自我禁言功能", "自定义禁言时长", "首次购买一年送一年", "第二次购买送飞机票一张"],
@@ -143,9 +143,9 @@ export default function VIPPage() {
       <main className="flex-grow">
         <section className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-20">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">NoneBot 大会员</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Noishi 大会员</h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              NoneBot 可能会被封号，但永远不会删库跑路。加入我们的大会员计划，共同打造更强大的 NoneBot 生态！
+              Noishi 可能会被封号，但永远不会删库跑路。加入我们的大会员计划，共同打造更强大的 Noishi 生态！
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {durations.map((duration) => (
@@ -223,7 +223,7 @@ export default function VIPPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-8 text-white">我们的承诺</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
-              无论遇到什么困难，NoneBot 团队都将坚持开源精神，持续为社区提供支持和更新。
+              无论遇到什么困难，Noishi 团队都将坚持开源精神，持续为社区提供支持和更新。
               我们可能会被封号，但绝不会放弃我们的使命和对用户的承诺。
             </p>
             <Button size="lg" className="bg-purple-600 text-white hover:bg-purple-700 h-12 px-8">

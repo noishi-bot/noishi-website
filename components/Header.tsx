@@ -14,16 +14,16 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-7xl">
         <nav className="flex justify-between items-center">
           <Link href="/" className="text-xl sm:text-2xl font-bold text-purple-600 hover:text-purple-700 transition-colors">
-            NoneBot
+            Noishi
           </Link>
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <Link href="/#features" className="text-gray-600 hover:text-purple-600 transition-colors">特性</Link>
             <Link href="/download" className="text-gray-600 hover:text-purple-600 transition-colors">下载</Link>
             <Link href="/subscribe" className="text-gray-600 hover:text-purple-600 transition-colors">订阅</Link>
             <Link href="/vip" className="text-gray-600 hover:text-purple-600 transition-colors">大会员</Link>
-            <Link href="https://v2.nonebot.dev/" className="text-gray-600 hover:text-purple-600 transition-colors">文档</Link>
+            <Link href="https://koishi.chat/zh-CN/" className="text-gray-600 hover:text-purple-600 transition-colors">文档</Link>
             <Button variant="outline" size="sm" asChild>
-              <Link href="https://github.com/nonebot/nonebot2">
+              <Link href="https://github.com/koishijs/koishi">
                 <Github className="w-4 h-4 mr-2" />
                 GitHub
               </Link>
@@ -50,10 +50,10 @@ export function Header() {
                 <Link href="/vip">大会员</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="https://v2.nonebot.dev/">文档</Link>
+                <Link href="https://koishi.chat/zh-CN/">文档</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="https://github.com/nonebot/nonebot2">GitHub</Link>
+                <Link href="https://github.com/koishijs/koishi">GitHub</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

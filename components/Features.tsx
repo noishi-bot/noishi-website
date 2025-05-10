@@ -14,13 +14,13 @@ const neonContentClass = "relative z-10";
 const features = [
   {
     icon: <Zap className="w-12 h-12 text-purple-400" />,
-    title: '异步架构',
-    description: '基于 Python 的 asyncio 库构建，高效处理并发操作。'
+    title: '跨语言架构',
+    description: 'Python与TypeScript,跨语言架构,兼容114514%以上的包'
   },
   {
     icon: <Puzzle className="w-12 h-12 text-pink-400" />,
     title: '插件系统',
-    description: '灵活的插件机制，轻松扩展和维护机器人功能。'
+    description: '可逆的插件机制，轻松扩展和维护机器人功能，同时支持插件热重载'
   },
   {
     icon: <Globe className="w-12 h-12 text-blue-400" />,
@@ -40,7 +40,7 @@ const features = [
   {
     icon: <Github className="w-12 h-12 text-indigo-400" />,
     title: '开源项目',
-    description: '代码托管在 GitHub，可自由使用和修改。'
+    description: '代码托管在 GitHub，遵循MIT许可证可自由使用和修改。'
   }
 ]
 
@@ -51,7 +51,7 @@ export function Features() {
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white animate-pulse">核心特性</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
           {features.map((feature, index) => (
-            <div key={index} className={`${neonBoxClass} shadow-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl animate-neon-breathe`} style={{ '--animation-delay': `${index * 0.2}s` }}>
+            <div key={index} className={`${neonBoxClass} shadow-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl animate-neon-breathe`} style={{ '--animation-delay': `${index * 0.2}s` } as React.CSSProperties}>
               <div className={`${neonContentClass} p-6`}>
                 <div className="flex justify-center mb-4 animate-neon-pulse">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-2 text-center text-white">{feature.title}</h3>

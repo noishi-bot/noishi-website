@@ -13,7 +13,7 @@ const plans = [
       '基础统计数据'
     ],
     buttonText: '开始使用',
-    buttonLink: 'https://v2.nonebot.dev/docs/start/installation'
+    buttonLink: 'https://koishi.chat/zh-CN/manual/starter/'
   },
   {
     name: '专业版',

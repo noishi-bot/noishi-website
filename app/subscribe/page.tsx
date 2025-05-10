@@ -9,7 +9,7 @@ export default function SubscribePage() {
       <main className="flex-grow">
         <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-20">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">选择您的 NoneBot 订阅计划</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">选择您的 Noishi 订阅计划</h1>
             <p className="text-xl mb-8">
               无论您是个人开发者还是大型企业，我们都有适合您需求的计划
             </p>

@@ -5,10 +5,10 @@ import { useState, useEffect, useRef } from "react"
 
 const adContents = [
   { title: "这不是bug，这是特性！", description: "别的用户就能关掉小广告", cta: "了解更多" },
-  { title: "开发者大会", description: "加入NoneBot年度盛会", cta: "报名参加" },
+  { title: "开发者大会", description: "加入Noishi年度盛会", cta: "报名参加" },
 ]
 
-const FloatingAd = ({ children, position, onMove }) => {
+const FloatingAd: React.FC<{ children: React.ReactNode; position: { x: number; y: number }; onMove: () => void }> = ({ children, position, onMove }) => {
   return (
     <div
       className="absolute w-40 h-40 bg-white text-purple-700 p-4 rounded-lg shadow-lg flex flex-col justify-between items-center text-center transition-all duration-500 ease-in-out z-50"
@@ -45,12 +45,12 @@ export function Hero() {
 
   const pages = [
     {
-      title: "NoneBot 社区愿景",
+      title: "Noishi 社区愿景",
       description: "收购腾讯，打造全球最大的开源聊天机器人生态系统",
     },
     {
-      title: "欢迎使用 NoneBot",
-      description: "强大、灵活、异步的 Python 聊天机器人框架，为您的创意赋能",
+      title: "欢迎使用 Noishi",
+      description: "强大、灵活、异步的跨平台&跨语言聊天机器人框架，为您的创意赋能",
     },
   ]
 
@@ -100,7 +100,7 @@ export function Hero() {
     return () => clearInterval(moveInterval)
   }, [])
 
-  const handleMoveAd = (key) => {
+  const handleMoveAd = (key: number) => {
     setVisibleAds((prevAds) => {
       const newAds = [...prevAds]
       const adIndex = newAds.findIndex((ad) => ad.key === key)
@@ -141,7 +141,7 @@ export function Hero() {
             className="w-full sm:w-auto transition-transform hover:scale-105 bg-white text-purple-700 hover:bg-purple-100 shadow-md hover:shadow-lg animate-fade-in"
           >
             <a
-              href="https://www.yuanshen.com"
+              href="https://koishi.chat"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center"
@@ -154,7 +154,7 @@ export function Hero() {
             size="lg"
             className="w-full sm:w-auto transition-transform hover:scale-105 bg-white text-purple-700 hover:bg-purple-100 shadow-md hover:shadow-lg animate-fade-in delay-200"
           >
-            <a href="https://v2.nonebot.dev/" className="flex items-center justify-center">
+            <a href="https://koishi.chat" className="flex items-center justify-center">
               查看文档
             </a>
           </Button>

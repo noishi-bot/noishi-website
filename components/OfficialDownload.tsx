@@ -7,10 +7,10 @@ export function OfficialDownload() {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">官方授权 立即下载</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
-          获得 NoneBot 官方认证，享受安全可靠的机器人框架。立即下载，开启您的 AI 之旅！
+          获得 Noishi 官方认证，享受安全可靠的机器人框架。立即下载，开启您的 AI 之旅！
         </p>
         <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-100 mb-8">
-          <Download className="mr-2 h-5 w-5" /> 立即下载 NoneBot
+          <Download className="mr-2 h-5 w-5" /> 立即下载 Noishi
         </Button>
         <div className="flex justify-center space-x-8">
           <div className="flex items-center">

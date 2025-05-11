@@ -1,11 +1,19 @@
-"use client"
+"use client";
 
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { Button } from "../../components/ui/button"
 import { Shield, Zap, Heart, Star, Check } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import "./vip-styles.css"
+
+// Extend the Window interface to include selectedTier
+declare global {
+  interface Window {
+    selectedTier?: { name: string; price: number; return_text: string; return_path: string};
+  }
+}
 
 const vipTiers = [
   {
@@ -130,12 +138,10 @@ const durations = [
   { months: 12, discount: 0.15 },
 ]
 
-export default function VIPPage() {
-  const [selectedDuration, setSelectedDuration] = useState(durations[0])
+const VIPPage = () => {
+  const router = useRouter();
 
-  const calculatePrice = (basePrice: number, months: number, discount: number) => {
-    return Math.round(basePrice * months * (1 - discount))
-  }
+  const [selectedDuration, setSelectedDuration] = useState(durations[0]);
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-900">
@@ -209,7 +215,18 @@ export default function VIPPage() {
                         </li>
                       ))}
                     </ul>
-                    <Button className="w-full bg-white text-purple-600 hover:bg-purple-100 h-12">
+                    <Button
+                      className="w-full bg-white text-purple-600 hover:bg-purple-100 h-12"
+                      onClick={() => {
+                        window.selectedTier = { 
+                          name: tier.name + " " + selectedDuration.months + "个月", 
+                          price: tier.discountedPrice ?? 10000,
+                          return_text: "返回会员页面",
+                          return_path: "/vip"
+                        };
+                        router.push(`/pay`);
+                      }}
+                    >
                       选择{tier.name}
                     </Button>
                   </div>
@@ -234,6 +251,8 @@ export default function VIPPage() {
       </main>
       <Footer />
     </div>
-  )
-}
+  );
+};
+
+export default VIPPage;
 

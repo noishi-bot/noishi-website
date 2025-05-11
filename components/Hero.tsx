@@ -34,6 +34,7 @@ const FloatingAd: React.FC<{ children: React.ReactNode; position: { x: number; y
 export function Hero() {
   const [currentPage, setCurrentPage] = useState(0)
   const [titleText, setTitleText] = useState("")
+  const [广告开关, set广告开关] = useState("开")
   const [visibleAds, setVisibleAds] = useState(
     adContents.map((content, index) => ({
       ...content,
@@ -100,6 +101,16 @@ export function Hero() {
     return () => clearInterval(moveInterval)
   }, [])
 
+  useEffect(() => {
+    // 暴露广告开关到全局
+    if (!Object.prototype.hasOwnProperty.call(window, "广告开关")) {
+      Object.defineProperty(window, "广告开关", {
+        get: () => 广告开关,
+        set: (value) => set广告开关(value),
+      })
+    }
+  }, [广告开关])
+
   const handleMoveAd = (key: number) => {
     setVisibleAds((prevAds) => {
       const newAds = [...prevAds]
@@ -116,15 +127,16 @@ export function Hero() {
 
   return (
     <section className="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 text-white min-h-[calc(100vh-4rem)] flex items-center relative overflow-hidden z-0">
-      {visibleAds.map((ad) => (
-        <FloatingAd key={ad.key} position={ad.position} onMove={() => handleMoveAd(ad.key)}>
-          <h3 className="font-bold text-sm">{ad.title}</h3>
-          <p className="text-xs my-2">{ad.description}</p>
-          <Button size="sm" className="w-full">
-            {ad.cta}
-          </Button>
-        </FloatingAd>
-      ))}
+      {广告开关 === "开" &&
+        visibleAds.map((ad) => (
+          <FloatingAd key={ad.key} position={ad.position} onMove={() => handleMoveAd(ad.key)}>
+            <h3 className="font-bold text-sm">{ad.title}</h3>
+            <p className="text-xs my-2">{ad.description}</p>
+            <Button size="sm" className="w-full">
+              {ad.cta}
+            </Button>
+          </FloatingAd>
+        ))}
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight min-h-[1.2em] relative">
@@ -139,24 +151,17 @@ export function Hero() {
           <Button
             size="lg"
             className="w-full sm:w-auto transition-transform hover:scale-105 bg-white text-purple-700 hover:bg-purple-100 shadow-md hover:shadow-lg animate-fade-in"
+            onClick={() => window.open("https://koishi.chat/zh-CN/manual/starter/", "_blank")}
           >
-            <a
-              href="https://koishi.chat"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center"
-            >
-              立即开始
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
+            立即开始
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button
             size="lg"
             className="w-full sm:w-auto transition-transform hover:scale-105 bg-white text-purple-700 hover:bg-purple-100 shadow-md hover:shadow-lg animate-fade-in delay-200"
+            onClick={() => window.open("https://koishi.chat", "_blank")}
           >
-            <a href="https://koishi.chat" className="flex items-center justify-center">
-              查看文档
-            </a>
+            查看文档
           </Button>
         </div>
       </div>

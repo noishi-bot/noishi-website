@@ -14,15 +14,25 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">快速链接</h4>
             <ul className="space-y-2">
-              <li><Link href="https://koishi.chat/zh-CN/" className="text-gray-400 hover:text-white transition-colors">文档</Link></li>
-              <li><Link href="https://github.com/koishijs/koishi" className="text-gray-400 hover:text-white transition-colors">GitHub</Link></li>
-              <li><Link href="https://koishi.chat/zh-CN/market/" className="text-gray-400 hover:text-white transition-colors">插件商店</Link></li>
+              <li><Link href="https://koishi.chat/zh-CN/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">文档</Link></li>
+              <li><Link href="https://github.com/koishijs/koishi" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">GitHub</Link></li>
+              <li><Link href="https://koishi.chat/zh-CN/market/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">插件市场</Link></li>
+              <li><Link href="https://koishi.chat/zh-CN/about/contact.html" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">参与讨论</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">社区</h4>
             <ul className="space-y-2">
-              <li><Link href="https://github.com/koishijs/koishi/discussions" className="text-gray-400 hover:text-white transition-colors">GitHub 讨论</Link></li>
+              <li><Link href="https://github.com/koishijs/koishi/discussions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">GitHub 讨论</Link></li>
+              <li><Link href="https://koishi.chat/zh-CN/about/community.html" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">社区资源</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">友链</h4>
+            <ul className="space-y-2">
+              <li><Link href="https://llonebot.com/zh-CN/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">LLTwoBot</Link></li>
+              <li><Link href="https://lagrangedev.github.io/Lagrange.Doc/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Lagrange</Link></li>
+              <li><Link href="https://napneko.github.io/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">NapCatQQ</Link></li>
             </ul>
           </div>
         </div>

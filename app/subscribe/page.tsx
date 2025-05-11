@@ -1,8 +1,12 @@
+"use client";
+
 import { Header } from '../../components/Header'
 import { Pricing } from '../../components/Pricing'
 import { Footer } from '../../components/Footer'
+import { useRouter } from 'next/navigation'
 
 export default function SubscribePage() {
+  const router = useRouter()
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -16,7 +20,7 @@ export default function SubscribePage() {
           </div>
         </div>
         <div className="container mx-auto px-4 py-12">
-          <Pricing />
+          <Pricing router={router}/>
         </div>
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">

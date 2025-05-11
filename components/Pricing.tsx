@@ -1,10 +1,10 @@
 import { Check } from 'lucide-react'
 import { Button } from './ui/button'
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
 const plans = [
   {
     name: '基础版',
-    price: '免费',
     features: [
       '基本机器人功能',
       '社区支持',
@@ -17,8 +17,8 @@ const plans = [
   },
   {
     name: '专业版',
-    originalPrice: '¥499',
-    discountedPrice: '¥199',
+    originalPrice: 499,
+    discountedPrice: 199,
     features: [
       '高级机器人功能',
       '优先技术支持',
@@ -27,7 +27,6 @@ const plans = [
       '自定义插件开发'
     ],
     buttonText: '升级至专业版',
-    buttonLink: '/subscribe',
     highlighted: true
   },
   {
@@ -41,11 +40,29 @@ const plans = [
       '定制化解决方案'
     ],
     buttonText: '联系销售',
-    buttonLink: '/contact'
+    buttonLink: 'https://koishi.chat/zh-CN/about/contact.html#%E4%BC%81%E4%B8%9A%E6%94%AF%E6%8C%81'
   }
 ]
 
-export function Pricing() {
+interface PricingProps {
+  router: AppRouterInstance;
+}
+
+export function Pricing({ router }: PricingProps) {
+  const handlePurchase = (plan: { name: string; price: number | undefined; buttonLink?: string }) => {
+    if (!plan.price && plan.buttonLink) {
+      window.location.href = plan.buttonLink;
+      return;
+    }
+    window.selectedTier = {
+      name: plan.name,
+      price: plan.price ?? 0,
+      return_text: "返回订阅页面",
+      return_path: "/",
+    };
+    router.push('/pay');
+  };
+
   return (
     <section id="pricing" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -58,8 +75,8 @@ export function Pricing() {
                 {plan.originalPrice ? (
                   <div className="text-center mb-6">
                     <p className="text-3xl font-bold">
-                      <span className="line-through text-gray-400 mr-2">{plan.originalPrice}</span>
-                      {plan.discountedPrice}
+                      <span className="line-through text-gray-400 mr-2">￥{plan.originalPrice}</span>
+                      ￥{plan.discountedPrice}
                     </p>
                     <p className="text-sm text-purple-600 mt-2">加客服微信领取专属优惠</p>
                   </div>
@@ -75,14 +92,18 @@ export function Pricing() {
                   ))}
                 </ul>
               </div>
-              <Button variant={plan.highlighted ? "default" : "outline"} className="w-full" asChild>
-                <a href={plan.buttonLink}>{plan.buttonText}</a>
+              <Button
+                variant={plan.highlighted ? "default" : "outline"}
+                className="w-full"
+                onClick={() => handlePurchase({ name: "Noishi "+plan.name, price: plan.discountedPrice ?? plan.originalPrice ?? 0, buttonLink: plan.buttonLink })}
+              >
+                {plan.buttonText}
               </Button>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 

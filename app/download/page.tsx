@@ -1,9 +1,13 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 
 export default function DownloadPage() {
+  const router = useRouter();
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -14,7 +18,7 @@ export default function DownloadPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="relative w-full aspect-[4/3] max-w-lg mx-auto">
                 <Image
-                  src="https://koishi.chat/logo.png"
+                  src="/koishi_logo.png"
                   alt="Noishi Logo"
                   width={500}
                   height={375}
@@ -83,6 +87,15 @@ export default function DownloadPage() {
                 <Button
                   size="lg"
                   className="flex-1 bg-blue-500 hover:bg-blue-600 text-lg h-12"
+                  onClick={() => {
+                        window.selectedTier = { 
+                          name: "Noishi 官方正版激活码", 
+                          price: 48.3,
+                          return_text: "返回下载页面",
+                          return_path: "/download"
+                        };
+                        router.push(`/pay`);
+                      }}
                 >
                   立即购买
                 </Button>

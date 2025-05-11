@@ -20,12 +20,12 @@ const features = [
   {
     icon: <Puzzle className="w-12 h-12 text-pink-400" />,
     title: '插件系统',
-    description: '可逆的插件机制，轻松扩展和维护机器人功能，同时支持插件热重载'
+    description: '可逆的插件系统，轻松扩展和维护机器人功能，支持插件热重载'
   },
   {
     icon: <Globe className="w-12 h-12 text-blue-400" />,
     title: '多平台支持',
-    description: '一次开发，多平台部署，支持 QQ、微信、Telegram 等多种平台。'
+    description: '一次编写，多平台部署，支持 QQ、微信、Telegram 等多种平台。'
   },
   {
     icon: <Cpu className="w-12 h-12 text-green-400" />,

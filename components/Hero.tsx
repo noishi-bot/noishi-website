@@ -35,6 +35,7 @@ export function Hero() {
   const [currentPage, setCurrentPage] = useState(0)
   const [titleText, setTitleText] = useState("")
   const [广告开关, set广告开关] = useState("开")
+  const [closeCounts, setCloseCounts] = useState<{ [key: number]: number }>({})
   const [visibleAds, setVisibleAds] = useState(
     adContents.map((content, index) => ({
       ...content,
@@ -112,6 +113,18 @@ export function Hero() {
   }, [广告开关])
 
   const handleMoveAd = (key: number) => {
+    setCloseCounts(prev => {
+      const newCount = (prev[key] || 0) + 1
+      // 达到10次关闭，隐藏该广告
+      if (newCount >= 10) {
+        setVisibleAds((prevAds) =>
+          prevAds.map((ad) =>
+            ad.key === key ? { ...ad, visible: false } : ad
+          )
+        )
+      }
+      return { ...prev, [key]: newCount }
+    })
     setVisibleAds((prevAds) => {
       const newAds = [...prevAds]
       const adIndex = newAds.findIndex((ad) => ad.key === key)
@@ -128,7 +141,7 @@ export function Hero() {
   return (
     <section className="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 text-white min-h-[calc(100vh-4rem)] flex items-center relative overflow-hidden z-0">
       {广告开关 === "开" &&
-        visibleAds.map((ad) => (
+        visibleAds.filter(ad => ad.visible).map((ad) => (
           <FloatingAd key={ad.key} position={ad.position} onMove={() => handleMoveAd(ad.key)}>
             <h3 className="font-bold text-sm">{ad.title}</h3>
             <p className="text-xs my-2">{ad.description}</p>

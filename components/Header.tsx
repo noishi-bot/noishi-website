@@ -10,9 +10,9 @@ import {
 
 export function Header() {
   return (
-    <header className="bg-white border-b border-gray-200">
+    <header className="bg-white !bg-white border-b border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-7xl">
-        <nav className="flex justify-between items-center">
+        <nav className="flex justify-between items-center bg-white">
           <Link href="/" className="text-xl sm:text-2xl font-bold text-purple-600 hover:text-purple-700 transition-colors">
             Noishi
           </Link>
@@ -36,7 +36,7 @@ export function Header() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align="end" className="bg-white">
               <DropdownMenuItem asChild>
                 <Link href="/#features">特性</Link>
               </DropdownMenuItem>
@@ -62,4 +62,3 @@ export function Header() {
     </header>
   )
 }
-

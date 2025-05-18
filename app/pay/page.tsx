@@ -40,7 +40,7 @@ export default function PaymentPage() {
         </p>
       )}
       <p className="text-lg mb-4">
-        支付倒计时：{minutes} 分 {seconds} 秒
+        支付剩余时间：{minutes} 分 {seconds} 秒
       </p>
       <p className="text-lg mb-8">请扫描下方二维码完成支付：</p>
       <div className="mb-8">

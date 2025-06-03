@@ -13,8 +13,7 @@ const FloatingAd: React.FC<{ children: React.ReactNode; position: { x: number; y
     <div
       className="absolute w-40 h-40 bg-white text-purple-700 p-4 rounded-lg shadow-lg flex flex-col justify-between items-center text-center transition-all duration-500 ease-in-out z-50"
       style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
+        transform: `translate(${position.x}px, ${position.y}px)`,
       }}
     >
       <button
@@ -22,6 +21,8 @@ const FloatingAd: React.FC<{ children: React.ReactNode; position: { x: number; y
           e.stopPropagation()
           onMove()
         }}
+        aria-label="关闭"
+        title="关闭广告"
         className="absolute top-0 right-0 text-gray-500 hover:text-gray-700 transition-all duration-200 ease-in-out p-1"
       >
         <X size={16} />

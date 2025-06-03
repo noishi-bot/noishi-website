@@ -8,7 +8,12 @@ import { join } from 'path';
 try {
   const userConfigPath = join(process.cwd(), 'v0-user-next.config.mjs');
   if (existsSync(userConfigPath)) {
-    userConfig = (await import(userConfigPath)).default;
+    // Use dynamic import with .then() to avoid top-level await
+    import(userConfigPath).then(mod => {
+      userConfig = mod.default;
+    }).catch(() => {
+      // ignore error
+    });
   }
 } catch (e) {
   // ignore error
@@ -31,7 +36,20 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
   output: 'export',
+  devIndicators: {
+    buildActivity: false,
+  },
+  productionBrowserSourceMaps: false,
+  modularizeImports: {
+    lodash: {
+      transform: 'lodash/{{member}}',
+    },
+    'date-fns': {
+      transform: 'date-fns/{{member}}',
+    },
+  },
 };
+
 
 mergeConfig(nextConfig, userConfig);
 

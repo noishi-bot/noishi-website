@@ -25,6 +25,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href="https://github.com/koishijs/koishi/discussions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">GitHub 讨论</Link></li>
               <li><Link href="https://koishi.chat/zh-CN/about/community.html" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">社区资源</Link></li>
+              <li><Link href="https://github.com/noishi-bot" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Github 上的noishi bot组织(非Koishi官方)</Link></li>
             </ul>
           </div>
           <div>
@@ -38,6 +39,15 @@ export function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Noishi. 保留所有权利。</p>
+          <p>
+            本网站部分图标素材来自
+            <a href="https://koishi.chat/logo.png" className="underline mx-1" target="_blank" rel="noopener noreferrer">Koishi</a>
+            ,遵循
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline mx-1" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+            协议。Noishi 与 Koishi 官方没有从属关系，本项目不是 Koishi 官方项目。详细信息请参阅
+            <a href="/koishi_logo.png-LICENSE.md" className="underline mx-1" target="_blank" rel="noopener noreferrer">许可说明</a>
+            。
+          </p>
         </div>
       </div>
     </footer>

@@ -19,11 +19,20 @@ export default function DownloadPage() {
               <div className="relative w-full aspect-[4/3] max-w-lg mx-auto">
                 <Image
                   src="/koishi_logo.png"
-                  alt="Noishi Logo"
+                  alt="Koishi Logo,图片来源:Koishi,基于 CC BY-SA 4.0 许可"
                   width={500}
                   height={375}
                   className="rounded-lg shadow-2xl bg-white p-8"
                 />
+                <span className="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 px-4 py-2 rounded-lg text-xs">
+                  此图片素材来源
+                  <a href="https://koishi.chat/logo.png" className="underline mx-1" target="_blank" rel="noopener noreferrer">Koishi</a>
+                  ,遵循
+                  <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline mx-1" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+                  协议。详见
+                  <a href="/koishi_logo.png-LICENSE.md" className="underline mx-1" target="_blank" rel="noopener noreferrer">许可说明</a>
+                  。
+                </span>
               </div>
               <div className="text-white">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">

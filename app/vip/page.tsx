@@ -132,6 +132,7 @@ const vipTiers = [
 ]
 
 const durations = [
+  { months: 1, discount: 0 },
   { months: 3, discount: 0 },
   { months: 6, discount: 0.05 },
   { months: 9, discount: 0.1 },
@@ -192,16 +193,18 @@ const VIPPage = () => {
                     <div className="mb-4">
                       <p className="text-3xl font-bold text-white">
                         {tier.name === "SVIP" ? (
-                          <>$527万亿</>
+                          <>¥{((tier.price ?? 0) * selectedDuration.months).toLocaleString()}</>
                         ) : (
                           <>
-                            <span className="line-through text-gray-300 mr-2">¥{tier.originalPrice}</span>¥
-                            {tier.discountedPrice}
+                            <span className="line-through text-gray-300 mr-2">¥{((tier.originalPrice ?? 0) * selectedDuration.months).toLocaleString()}</span>
+                            ¥{((tier.discountedPrice ?? 0) * selectedDuration.months).toLocaleString()}
                           </>
                         )}
                       </p>
                       <p className="text-sm mt-2 text-white">
-                        {tier.name === "SVIP" ? "周四V我50封你做企鹅老板" : "加客服微信领取专属优惠"}
+                        {tier.name === "SVIP"
+                          ? `周四V我50封你做企鹅老板，${selectedDuration.months}个月合计¥${(((tier.price ?? 0) * selectedDuration.months).toLocaleString())}`
+                          : `加客服微信领取专属优惠，${selectedDuration.months}个月合计¥${(((tier.discountedPrice ?? 0) * selectedDuration.months).toLocaleString())}`}
                       </p>
                       {tier.specialOffer && (
                         <p className="text-sm mt-2 text-yellow-300 font-semibold">{tier.specialOffer}</p>
@@ -219,15 +222,17 @@ const VIPPage = () => {
                       className="w-full bg-white text-purple-600 hover:bg-purple-100 h-12"
                       onClick={() => {
                         window.selectedTier = { 
-                          name: tier.name + " " + selectedDuration.months + "个月", 
-                          price: tier.discountedPrice ?? 10000,
+                          name: `${tier.name} ${selectedDuration.months}个月`, 
+                          price: tier.name === "SVIP"
+                            ? (tier.price ?? 0) * selectedDuration.months
+                            : (tier.discountedPrice ?? 10000) * selectedDuration.months,
                           return_text: "返回会员页面",
                           return_path: "/vip"
                         };
                         router.push(`/pay`);
                       }}
                     >
-                      选择{tier.name}
+                      选择{tier.name}（{selectedDuration.months}个月）
                     </Button>
                   </div>
                 </div>

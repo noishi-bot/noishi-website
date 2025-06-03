@@ -1,5 +1,5 @@
 {
-  "name": "my-v0-project",
+  "name": "noishi-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -37,7 +37,6 @@
     "@radix-ui/react-toggle": "^1.1.1",
     "@radix-ui/react-toggle-group": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.6",
-    "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
@@ -45,10 +44,10 @@
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "14.2.16",
+    "next": "^15.1",
     "next-themes": "^0.4.4",
     "react": "^18",
-    "react-day-picker": "8.10.1",
+    "react-day-picker": "^9.7.0",
     "react-dom": "^18",
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
@@ -63,6 +62,8 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.4",
@@ -70,7 +71,19 @@
   },
   "postcss": {
     "plugins": {
-      "tailwindcss": {}
+      "tailwindcss": {},
+      "autoprefixer": {},
+      "cssnano": {
+        "preset": [
+          "default",
+          {
+            "discardComments": {
+              "removeAllButFirst": true
+            }
+          }
+        ]
+      }
     }
-  }
+  },
+  "packageManager": "yarn@4.5.2+sha512.570504f67349ef26d2d86a768dc5ec976ead977aa086b0bb4237e97d5db7ae5c620f9f0e0edf3ea5047205063faff102bf2a2d778664a94eaaa1085ad483fe2e"
 }

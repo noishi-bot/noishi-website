@@ -2918,6 +2918,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"github-markdown-css@npm:^5.8.1":
+  version: 5.8.1
+  resolution: "github-markdown-css@npm:5.8.1"
+  checksum: 10c0/67d3540731f9f1fc3b903362ef270e6db0ffe252fd4998a1a8777fc63b288b1904e5e57703e74a2ee04f1d613a4732b1949cb472b66a3c2e9e2b7a1750d1f0a6
+  languageName: node
+  linkType: hard
+
 "glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
   version: 5.1.2
   resolution: "glob-parent@npm:5.1.2"
@@ -3523,6 +3530,7 @@ __metadata:
     cssnano: "npm:^7.0.7"
     date-fns: "npm:4.1.0"
     embla-carousel-react: "npm:8.5.1"
+    github-markdown-css: "npm:^5.8.1"
     input-otp: "npm:1.4.1"
     lucide-react: "npm:^0.454.0"
     next: "npm:^15.1"

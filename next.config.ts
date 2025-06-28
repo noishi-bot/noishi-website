@@ -20,6 +20,14 @@ try {
 }
 
 const nextConfig: NextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.md$/,
+      type: 'asset/source',
+    });
+
+    return config;
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -36,9 +44,6 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
   output: 'export',
-  devIndicators: {
-    buildActivity: false,
-  },
   productionBrowserSourceMaps: false,
   modularizeImports: {
     lodash: {

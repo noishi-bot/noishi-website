@@ -45,7 +45,7 @@ export function Footer() {
             ,遵循
             <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline mx-1" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
             协议。Noishi 与 Koishi 官方没有从属关系，本项目不是 Koishi 官方项目。详细信息请参阅
-            <a href="/koishi_logo.png-LICENSE.md" className="underline mx-1" target="_blank" rel="noopener noreferrer">许可说明</a>
+            <a href="/koishi_logo.png-LICENSE" className="underline mx-1" target="_blank" rel="noopener noreferrer">许可说明</a>
             。
           </p>
         </div>

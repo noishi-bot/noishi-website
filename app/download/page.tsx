@@ -30,7 +30,7 @@ export default function DownloadPage() {
                   ,遵循
                   <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline mx-1" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
                   协议。详见
-                  <a href="/koishi_logo.png-LICENSE.md" className="underline mx-1" target="_blank" rel="noopener noreferrer">许可说明</a>
+                  <a href="/koishi_logo.png-LICENSE" className="underline mx-1" target="_blank" rel="noopener noreferrer">许可说明</a>
                   。
                 </span>
               </div>
